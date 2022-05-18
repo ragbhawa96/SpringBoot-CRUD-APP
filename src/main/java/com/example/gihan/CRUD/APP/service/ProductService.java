@@ -28,13 +28,19 @@ public class ProductService {
         return repository.findById(id).orElse(null);
     }
 
+    public List<Product> getProducts(){
+        return  repository.findAll();
+    }
+
+    public Product getProductByName(String name){
+        return repository.findByName(name);
+    }
+
     public String deleteProduct(int id){
         repository.deleteById(id);
         return "Product removed " + id ;
     }
 
-    /* TODO
-    *
-    * */
+
 
 }

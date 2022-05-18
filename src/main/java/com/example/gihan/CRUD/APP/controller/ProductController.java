@@ -28,6 +28,16 @@ public class ProductController {
         return service.getProductById(id);
     }
 
+    @GetMapping("/products")
+    public List<Product> getProducts(){
+        return service.getProducts();
+    }
+
+    @GetMapping("/product/{name}")
+    public Product getProductByName(@PathVariable String name){
+        return service.getProductByName(name);
+    }
+
     @DeleteMapping("/delete/{id}")
     public String deleteProduct(@PathVariable int id){
         return service.deleteProduct(id);
